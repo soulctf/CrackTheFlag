@@ -1,11 +1,4 @@
-pub fn morse(data: &str) {
-        let encrypted = data.to_string();
-        let mut v = Vec::new();
-        for i in encrypted.chars() {
-            // println!("{:?}", i)
-            v.push(i);
-        }
-        println!("{:?}", v);
+pub fn morse(data: &str) -> String {
         use std::collections::HashMap;
 
         // Takes in data and converts it to a String
@@ -67,16 +60,16 @@ pub fn morse(data: &str) {
         // Iterates, clones, and collects all values from the map so that they can be looped though
         ].iter().cloned().collect();
         // Creates and Empty String to store concatenated characters
-        let mut unencrypted = String::new();
+        let mut plain_text = String::new();
         // Loops through both the message and the map and compares each instance of morse to values within the map
         for instance in msg {
             for (key, value) in &md {
                 if instance == key {
                     // Dereferences the value and pushes it onto a string
-                    unencrypted.push(*value);
+                    plain_text.push(*value);
                 }
             }
         }
-        // Prints out the final unencrypted string
-        println!("{}", unencrypted);
+        // Returns the final unencrypted string
+        plain_text
     }
