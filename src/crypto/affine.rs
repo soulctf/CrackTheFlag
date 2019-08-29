@@ -1,26 +1,36 @@
 //TODO: affine Cipher
-use crate::crypto::modInv;
+use crate::crypto::multiInv;
 
+// Takes in a string and returns a vector
+// Formulas:
+// Encryption -> c = ap + b (mod m), 1 <= a <= m, 1 <= b <= m
+// Decryption -> p = a^-1(c - b) (mod m)
+// Vars:
+// - c = ciphertext letter(converted to an int/u8)
+// - p = plaintext letter(converted to an int/u8)
+// - a = first key; must be between 1 & 26(number of characters in your alphabet)
+//       Note: Should have no factors in common with m(26)
+// - b = second key; must be between 1 & 26
+// - m = total number of characters in the alphabet
 pub fn affine(data: &str) -> Vec<String> {
-    let mut decrypted_text: Vec<String> = Vec::new();
-    for i in 0..26 {
-        let inv = modInv(i, 26);
-        for j in 0..26 {
-            let mut temp = String::new();
-            for c in data.to_string().chars() {
-                if c.is_alphabetic() {
-                    if c.is_lowercase() {
-                        temp.push((((c as u8 - 97 - j)*inv + 26)%26 + 97) as char);
-                    } else {
-                        temp.push((((c as u8 - 65 - j)*inv + 26)%26 + 65) as char);
-                    }
-                } else {
-                    temp.push(c);
-                }
-            }
-            decrypted_text.push(temp);
-        }
+    // Takes in data and converts the reference to an actual string
+    let data = String::from_str(data);
+    for c in data.chars() {
+        // Creates a vector and pushes all character values onto the stack & returns the vector
+        let v: Vec<char> = Vec::new();
+        v.push(c);
+        return v
     }
-    decrypted_text
-}
+    
+
+    fn encryption(a: u8, b: u8, p: u8, m: u8 = 26) {
+
+    }
+
+    fn decryption(a: u8, b: u8, c: u8, m: u8 = 26) {
+
+    }
+    
+    
+    }
 
