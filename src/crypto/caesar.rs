@@ -1,4 +1,4 @@
-pub fn caesar_cipher(cipher_text: &str) -> Vec<String> {
+pub fn decrypt(cipher_text: &str) -> Vec<String> {
     
     let mut plain_text: Vec<String> = Vec::new(); 
     for shift in 0..26 {

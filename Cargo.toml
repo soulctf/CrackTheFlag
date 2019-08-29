@@ -5,3 +5,4 @@ authors = ["Soul <soulctf@gmail.com>", "SinisterMatrix <sinistermatrix663@gmail.
 edition = "2018"
 
 [dependencies]
+num = "0.2"
