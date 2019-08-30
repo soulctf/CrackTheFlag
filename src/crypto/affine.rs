@@ -12,7 +12,7 @@ use crate::crypto::multiInv;
 //       Note: Should have no factors in common with m(26)
 // - b = second key; must be between 1 & 26
 // - m = total number of characters in the alphabet
-pub fn affine(data: &str) -> Vec<String> {
+/*pub fn affine(data: &str) -> Vec<String> {
     // Takes in data and converts the reference to an actual string
     let data = String::from_str(data);
     for c in data.chars() {
@@ -34,3 +34,4 @@ pub fn affine(data: &str) -> Vec<String> {
     
     }
 
+*/

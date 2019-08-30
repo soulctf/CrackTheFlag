@@ -1,9 +1,17 @@
 mod crypto;
+extern crate num;
+
 
 fn main() {
     use crypto::*;
-    println!("{:?}", "Compiled");
-    println!("{:?}", crypto::vigenere::encrypt("SUPERSECRET", "code"));
-        println!("{:?}", crypto::vigenere::decrypt("UISITGHGTSW", "code"));
+    use num::bigint::BigInt;
 
+    println!("{:?}", "Compiled");
+    
+    let mut rsa = crypto::rsa::rsa::new();
+    rsa.n = BigInt::parse_bytes(b"30994968412821274638126108542140224647370292100079091608343041083209715023181825537637957453183815788151099869840363450721", 10);
+    rsa.e = BigInt::parse_bytes(b"65537", 10);
+    rsa.c = BigInt::parse_bytes(b"3740808283126743789473658216888004237756151970385422112230702175214670415045578511813428786937523016996521109011952458274", 10);
+    rsa.d = BigInt::parse_bytes(b"10949944362147351445695313961215384000802056441294706923101734114824865877971959648683318864984560110549528540371119079473", 10);
+    println!("{:?}", crypto::rsa::rsa::decrypt(rsa));
 }
