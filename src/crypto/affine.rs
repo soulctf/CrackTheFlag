@@ -12,26 +12,26 @@ use crate::crypto::multiInv;
 //       Note: Should have no factors in common with m(26)
 // - b = second key; must be between 1 & 26
 // - m = total number of characters in the alphabet
-/*pub fn affine(data: &str) -> Vec<String> {
+pub fn affine(data: &str) {
     // Takes in data and converts the reference to an actual string
-    let data = String::from_str(data);
     for c in data.chars() {
         // Creates a vector and pushes all character values onto the stack & returns the vector
-        let v: Vec<char> = Vec::new();
-        v.push(c);
-        return v
+        let mut v = Vec::new();
+        v.push(c as u8);
+        println!("{:?}", v);
     }
     
 
-    fn encryption(a: u8, b: u8, p: u8, m: u8 = 26) {
+    fn encryption(a: u8, b: u8, p: u8, m: u8) {
+        let prime = a;
+        if
+        let s_key = b;
 
     }
 
-    fn decryption(a: u8, b: u8, c: u8, m: u8 = 26) {
+    // fn decryption(a: u8, b: u8, c: u8, m: u8) {
 
-    }
+    // }
     
     
     }
-
-*/
