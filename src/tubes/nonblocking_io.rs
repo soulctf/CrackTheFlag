@@ -17,7 +17,20 @@ enum ByteStream {
     Stdin(Vec<u8>)
 }
 
+struct process {
+    input: thread,
+    output: thread
+}
+
+impl process {
+
+    fn new(command: String) -> process {
+        
+    }
+}
 fn main() {
+    
+    let p = process::new("ls");
     // Grabs the command
     let cmd = Command::new("bash")
     // Grabs the arguments
@@ -57,6 +70,7 @@ fn main() {
         // Manually locks the global buffer returned through each instance of the handle
         let stdin_buf = stdin.lock()
         
+        
         for data in stdin_buf.lines() {
             let line = match data {
                 Ok(line) => ByteStream::Stdin(line),
@@ -74,6 +88,4 @@ fn main() {
             ByteStream::Stdin(line) => println!("STDIN: {}", line),
         }
     }
-
-
 }

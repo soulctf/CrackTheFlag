@@ -22,12 +22,12 @@ pub fn affine(data: &str) {
     }
     
 
-    fn encryption(a: u8, b: u8, p: u8, m: u8) {
+    /*fn encryption(a: u8, b: u8, p: u8, m: u8) {
         let prime = a;
         if
         let s_key = b;
 
-    }
+    }*/
 
     // fn decryption(a: u8, b: u8, c: u8, m: u8) {
 
